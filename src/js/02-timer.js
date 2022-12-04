@@ -73,7 +73,7 @@ const counterHandler = () => {
   startBtn.disabled = true;
   timerId = setInterval(() => {
     let date = convertMs(dates);
-    console.log('odliczanie 1s');
+    console.log('Odliczanie - 1s');
 
     const { days, hours, minutes, seconds } = date;
 
