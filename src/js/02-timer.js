@@ -13,9 +13,8 @@ const myInput = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button');
 const stopBtn = document.querySelector('#close-btn');
 
-
-
 startBtn.disabled = true;
+stopBtn.disabled = true;
 let timerId = null;
 //dates = różnice daty w milisekundach
 let dates = 0;
@@ -71,6 +70,7 @@ const options = {
 const counterHandler = () => {
   console.log('Odliczanie rozpoczęte!');
   startBtn.disabled = true;
+  stopBtn.disabled = false;
   timerId = setInterval(() => {
     let date = convertMs(dates);
     console.log('Odliczanie - 1s');
@@ -96,5 +96,5 @@ startBtn.addEventListener('click', counterHandler);
 stopBtn.addEventListener('click', () => {
   console.log('Czas zatrzymany!');
   clearInterval(timerId);
-  startBtn.disabled = false;
+  // stopBtn.disabled = false;
 });
